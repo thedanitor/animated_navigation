@@ -85,18 +85,79 @@ nav ul li {
 
 /* list items in nav when active */
 nav.active ul li {
-    /* fully visible */
-    opacity: 1;
-    /* rotate 360 degrees when active toggled */
-    transform: rotateY(360deg);
+  /* fully visible */
+  opacity: 1;
+  /* rotate 360 degrees when active toggled */
+  transform: rotateY(360deg);
 }
 
 /* links in list item in nav */
-nav ul li a {
-    position: relative;
-    color: #000;
-    /* removes underline from link */
-    text-decoration: none;
-    /* 0 top/bottom | 10px sides */
-    margin: 0 10px;
+nav ul a {
+  position: relative;
+  color: #000;
+  /* removes underline from link */
+  text-decoration: none;
+  /* 0 top/bottom | 10px sides */
+  margin: 0 10px;
+}
+
+/* button with class icon */
+.icon {
+  background-color: #fff;
+  /* remove outline */
+  border: 0;
+  /* pointer when hovered */
+  cursor: pointer;
+  /* no padding */
+  padding: 0;
+  /* relative so can position lines inside absolute */
+  position: relative;
+  height: 30px;
+  width: 30px;
+}
+
+/* ** I'm going to leave the outline for accessibility, but I'll change the color */
+/* icon button when focused */
+.icon:focus {
+    outline-color: #5290f9;
+}
+
+/* lines in icon button */
+.icon .line {
+    background-color: #5290f9;
+    /* vertical thickness of the lines */
+    height: 2px;
+    /* horizontal length of lines */
+    width: 20px;
+    /* want to manually position */
+    position: absolute;
+    /* 10px from top */
+    top: 10px;
+    /* 5px from left */
+    left: 5px;
+    /* 0.6s transition on transform when active class toggled */
+    transition: transform 0.6s linear;
+}
+
+/* line 2 in icon button  */
+.icon .line2 {
+    top: auto;
+    /* 10px from bottom */
+    bottom: 10px;
+}
+
+/* line 1 in icon button when nav active */
+nav.active .icon .line1 {
+    /* rotate 765deg counter-clockwise (ends up at 45deg angle), move 5.5px so lines cross at center to make X */
+    transform: rotate(-765deg) translateY(5.5px);
+    /* 0px from left so X is more centered in button. Much more noticeable since we kept outline*/
+    left: 0px;
+}
+
+/* line 2 in icon button when nav active */
+nav.active .icon .line2 {
+    /* rotate 765deg clockwise (ends up at 45deg angle), move 5.5px so lines cross at center to make X */
+    transform: rotate(765deg) translateY(-5.5px);
+    /* 0px from left so X is more centered in button. Much more noticeable since we kept outline */
+    left: 0px;
 }
