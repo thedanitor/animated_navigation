@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
+
+* {
+  /* width not affected by padding or border */
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Muli", sans-serif;
+  /* linear gradient from top to bottom, color 1 0% - 50% | color 2 50% - 100% */
+  background-image: linear-gradient(
+    to bottom,
+    #eafbff 0%,
+    #eafbff 50%,
+    #5290f9 50%,
+    #5290f9 100%
+  );
+  /* include background color in case browser doesn't support gradient */
+  background-color: #eafbff;
+  display: flex;
+  /* Centered horizontally */
+  align-items: center;
+  /* Centered vertically on 100% viewport */
+  justify-content: center;
+  /* 100% viewport height */
+  height: 100vh;
+  /* no margins */
+  margin: 0;
+}
+
+nav {
+  background-color: #fff;
+  /* 20px all around */
+  padding: 20px;
+  /* non-active width */
+  width: 80px;
+  display: flex;
+  /* Centered horizontally */
+  align-items: center;
+  /* Centered vertically on 100% viewport */
+  justify-content: center;
+  /* slightly rounded corners */
+  border-radius: 3px;
+/* offset-x | offset-y | blur-radius | color */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* nav with active class */
+nav.active {
+  width: 350px;
+}
