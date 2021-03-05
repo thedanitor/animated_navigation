@@ -11,3 +11,4 @@ This project is from the Day 14 code along video from Udemy's 50 projects in 50 
 ### Things Learned
 
 * Can specify percentage of space to fill for linear gradient
+* list-style-type can be used to specify the type of list marker (none removes marker entirely)

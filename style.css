@@ -41,11 +41,62 @@ nav {
   justify-content: center;
   /* slightly rounded corners */
   border-radius: 3px;
-/* offset-x | offset-y | blur-radius | color */
+  /* offset-x | offset-y | blur-radius | color */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  /* 0.6s transition on width when active class toggled */
+  transition: width 0.6s linear;
 }
 
 /* nav with active class */
 nav.active {
   width: 350px;
+}
+
+/* list in nav */
+nav ul {
+  display: flex;
+  /* remove list item marker (bullet) */
+  list-style-type: none;
+  /* remove padding */
+  padding: 0;
+  /* remove margins */
+  margin: 0;
+  /* no width without active class */
+  width: 0;
+  /* 0.6s transition on width when active class toggled */
+  transition: width 0.6s linear;
+}
+
+/* list in nav when nav active */
+nav.active ul {
+  /* full container width */
+  width: 100%;
+}
+
+/* list items in nav */
+nav ul li {
+  /* 0 degree rotation when not active  */
+  transform: rotateY(0deg);
+  /* invisible when not active  */
+  opacity: 0;
+  /* 0.6s transition on transform and opacity when active class toggled */
+  transition: transform 0.6s linear, opacity 0.6s linear;
+}
+
+/* list items in nav when active */
+nav.active ul li {
+    /* fully visible */
+    opacity: 1;
+    /* rotate 360 degrees when active toggled */
+    transform: rotateY(360deg);
+}
+
+/* links in list item in nav */
+nav ul li a {
+    position: relative;
+    color: #000;
+    /* removes underline from link */
+    text-decoration: none;
+    /* 0 top/bottom | 10px sides */
+    margin: 0 10px;
 }
